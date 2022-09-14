@@ -8,7 +8,7 @@
         <draggable class="dragArea" group="panels" v-model="panels">
           <b-list-group-item v-for="panel in col.panels" :key="panel.id">
             <b-row>
-              <b-col sm:1 md:1250>
+              <b-col>
                   <h2>{{panel.panelCaption}}</h2>
                   <p>{{panel.message}}</p>
               </b-col>
