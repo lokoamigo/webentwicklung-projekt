@@ -1,16 +1,25 @@
 <template>
-  <b-card>
+  <div id="kanbanBoard">
     <b-list-group>
       <b-row>
       <b-col v-for="col in cols" :key="col.caption">
           <h1>{{col.caption}}</h1>
         <draggable class="dragArea" group="panels" v-model="panels">
-          <b-list-group-item v-for="panel in col.panels" :key="panel.id">{{panel.message}}</b-list-group-item>
+          <b-list-group-item v-for="panel in col.panels" :key="panel.id">
+            <b-row>
+              <b-col sm:1 md:1250>
+                <b-card>
+                  <h2>{{panel.panelCaption}}</h2>
+                  <p>{{panel.message}}</p>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-list-group-item>
         </draggable>
       </b-col>
       </b-row>  
     </b-list-group>  
-  </b-card>
+  </div>
 </template>
 
 <script>
@@ -27,6 +36,7 @@ export default {
           panels:[
            {
             id:1,
+            panelCaption:"caption10",
             message:"testmessage",
            } 
             
@@ -37,26 +47,32 @@ export default {
           panels:[
            {
             id:1,
+            panelCaption:"caption9",
             message:"testmessage",
            },
            {
             id:2,
+            panelCaption:"caption8",
             message:"asdfasdf",
            },
            {
             id:3,
+            panelCaption:"caption7",
             message:"testmeqwertqertssage",
            },
            {
             id:4,
+            panelCaption:"caption6",
             message:"testshwrthmessage",
            },
            {
             id:5,
+            panelCaption:"caption5",
             message:"testmesxcvbxcvbzuiosage",
            },
            {
             id:6,
+            panelCaption:"caption4",
             message:"testmessqwertage",
            },
             
@@ -67,6 +83,7 @@ export default {
           panels:[
            {
             id:1,
+            panelCaption:"caption3",
             message:"testmessage",
            } 
             
@@ -77,6 +94,7 @@ export default {
           panels:[
            {
             id:1,
+            panelCaption:"caption2",
             message:"testmessage",
            } 
             
@@ -87,6 +105,7 @@ export default {
           panels:[
            {
             id:1,
+            panelCaption:"caption1",
             message:"testmessage",
            } 
             
