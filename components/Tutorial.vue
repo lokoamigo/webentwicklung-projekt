@@ -3,19 +3,19 @@
     <b-list-group>
       <b-row>
       <b-col v-for="col in cols" :key="col.caption">
-          <h1>{{col.caption}}</h1>
+        <b-card>
+        <h1>{{col.caption}}</h1>
         <draggable class="dragArea" group="panels" v-model="panels">
           <b-list-group-item v-for="panel in col.panels" :key="panel.id">
             <b-row>
               <b-col sm:1 md:1250>
-                <b-card>
                   <h2>{{panel.panelCaption}}</h2>
                   <p>{{panel.message}}</p>
-                </b-card>
               </b-col>
             </b-row>
           </b-list-group-item>
         </draggable>
+        </b-card>
       </b-col>
       </b-row>  
     </b-list-group>  
